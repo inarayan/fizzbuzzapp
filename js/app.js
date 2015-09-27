@@ -4,8 +4,21 @@ $('document').ready(function()
 {
   var disp="";
   var num=$('#input').val();
-  var i=0;
-  for (i=1;i<=num;i++){
+  console.log(parseInt(num));
+  if (isNaN(parseInt(num))){
+    alert("You have entered an invalid number");
+  }
+  else
+    {
+      fizzbuzzfunc(num);
+    }
+});
+});
+
+var fizzbuzzfunc=function (num)
+{
+
+  for (var i=1;i<=num;i++){
     if (i%3==0 && i%5==0)
     {
       //console.log("fizzbuzz");
@@ -20,10 +33,7 @@ $('document').ready(function()
       $('#display').before("<p>buzz</p>");
     }
     else {
-      {
         $('#display').before("<p>"+i+"</p>");
-      }
     }
   }
-});
-});
+}
